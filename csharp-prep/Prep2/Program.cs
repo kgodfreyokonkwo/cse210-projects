@@ -41,7 +41,7 @@ class Program
             {
                 sign = "+";
             }
-            else if (D1 >= 3 && score !=100)
+            else if (D1 <= 3 && score !=100)
             {
                 sign = "-";
             }

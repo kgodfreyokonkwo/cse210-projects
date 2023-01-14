@@ -23,7 +23,6 @@ class Program
         {
             Console.Write("Chose a random integer from 1 to 101 ");
             guess = int.Parse(Console.ReadLine());
-
             count = count + 1;
             
             if (magicNumber > guess)
@@ -37,8 +36,6 @@ class Program
             else
             {
                 Console.WriteLine($"You guessed it right, you guessed {count} times ");
-            }
-
             }
         }     
     }

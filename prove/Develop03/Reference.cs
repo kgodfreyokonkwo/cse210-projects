@@ -1,22 +1,28 @@
 using System;
-using System.IO;
+using System.Collections.Generic;
 
-class Reference
+
+
+//Class to manage the reference of the scripture, 
+// including the book, chapter and verse reference
+public class Reference
 {
-    static void Main(string[] args)
+    public string Book { get; set; }
+
+    public string Chapter { get; set; }
+
+    public string Verse { get; set; }
+
+    public Reference(string book, string chapter, string verse)
     {
-        private string book;
+        this.Book = book;
+        this.Chapter = chapter;
+        this.Verse = verse;
 
-        private int chapter;
+    }
 
-        private int verseBegin;
+    public void display()
+    {
 
-        private int verseEnd;
-
-
-        public void textDisplay()
-        {
-            
-        }
     }
 }

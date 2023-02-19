@@ -1,17 +1,18 @@
 using System;
-using System.IO;
+using System.Collections.Generic;
 
+
+//class to store and collect information about the scripture text to be memorized
 public class Word
 {
-
-    // Get the current date time, using the DateTime.Now function
-    private string word;
-
-    private bool hidden;
-
+    
     public Word()
     {
 
+    }
+    public static string getRenderedText(string word)
+    {
+        return word;
     }
    
 }

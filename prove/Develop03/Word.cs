@@ -1,18 +1,35 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-
-//class to store and collect information about the scripture text to be memorized
-public class Word
+//receive the words and save a string and convert to list
+public class Word 
 {
-    
-    public Word()
-    {
+    public string _word { get; set; }
 
-    }
-    public static string getRenderedText(string word)
+
+    public string GetWord()
     {
-        return word;
+      return _word;
     }
-   
+
+    public void SetWord(string word)
+    {
+        _word = word;
+    }
+
+
+    public string getRenderedText()
+    {
+        return "default";
+    }
+
+    public string WordStringToWordList()
+    {
+        List<string> wordList = _word.Split(' ').ToList();
+
+        return $"{wordList}";
+    } 
+
+
 }

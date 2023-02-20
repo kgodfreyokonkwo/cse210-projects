@@ -2,27 +2,35 @@ using System;
 using System.Collections.Generic;
 
 
-
-//Class to manage the reference of the scripture, 
-// including the book, chapter and verse reference
-public class Reference
+//store the scripture references and use the references to create a string such as John3:1-3
+public class Reference 
 {
-    public string Book { get; set; }
+    private string _Book = "";
+    private string _Chapter = "";
+    private string _VerseBeg = "";
 
-    public string Chapter { get; set; }
+    private string _VerseEnd = "";
 
-    public string Verse { get; set; }
-
-    public Reference(string book, string chapter, string verse)
+    public Reference(string book, string chapter, string verseB, string verseE)
     {
-        this.Book = book;
-        this.Chapter = chapter;
-        this.Verse = verse;
+        _Book = book;
+        _Chapter = chapter;
+        _VerseBeg = verseB;
+        _VerseEnd = verseE;
+    }
+
+    public void DisplayReference()
+    {
 
     }
 
-    public void display()
-    {
 
-    }
+    public string GetScriptVerse()
+	{
+        return $"{_Book}{_Chapter}:{_VerseBeg}-{_VerseEnd}: ";
+
+	}
+
+
+	
 }

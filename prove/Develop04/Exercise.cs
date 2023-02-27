@@ -4,18 +4,21 @@ using System.Collections.Generic;
 
 public class Exercise 
 {
+    //Declare the variables and attributes for this class
+    //use access modifiers to restrict access to these
     private string _activityName = "";
     private string _activityDescription = "";
     private int _intendedDuration;
     private string _endingText = "";
 
 
-
+    //Constructor
     public Exercise()
     {
 
     }
 
+    //Constructor
     public Exercise(string activityName, string activityDescription, string endingText, int intendedDuration)
     {
         _activityName = activityName;
@@ -67,51 +70,58 @@ public class Exercise
     }
 
 
+    //Method for the welcome message
     public string WelcomeMsgInstruction()
     {
-        return $"Welcome to the {_activityName}. \n{_activityDescription}. Clear your mind and focus on your {_activityName}";
+        return $"Welcome to the {_activityName}. \n{_activityDescription}. Clear your mind and focus on your {_activityName} \n";
     }
+    
+   
+    //Method for the farewell message after each exercise
     public string ConclusionMsg()
     {
-        return $"You have completed the {_activityName}. {_endingText}. ";
+        return $"\nYou have completed the {_activityName}. {_endingText}. ";
     }
   
 
-
+    //Metjhod to pause exercise when needed
     public void pauseExercise()
     {
         Console.WriteLine("Get ready.");
-        Thread.Sleep(5000);
+        Thread.Sleep(500);
         Console.WriteLine();
 
     }
 
+    //Count down timer method
     public decimal CountDownTimer()
     {
-        return 0;
+        
+        for (int i = 10; i < 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b\b \b\b");
+        }
+        return Console.Read();
     }
+    //Display animation method
     public void DisplayAnimation()
     {
+        List<string> animationString = new List<string>();
+        animationString.Add("|");
+        animationString.Add("/");
+        animationString.Add("-");
+        animationString.Add("\\");
 
-        for (int i = 0; i < 10; i++)
+        foreach (string symbol in animationString)
         {
-            Console.Write("/");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("-");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("\\");
-            Thread.Sleep(250);
-            Console.Write("\b \b");
-            Console.Write("|");
-            Thread.Sleep(250);
+            Console.Write(symbol);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
         }
-        
+
     }
 
 
-
-	
 }

@@ -7,6 +7,7 @@ public class BreatheExercise : Exercise
     {
         
     }
+    //Constructor, showing inheritance of class members from the base class
     public BreatheExercise(string activityName, string activityDescription, 
     int intendedDuration, string endingText) : base(activityName, activityDescription, endingText, intendedDuration)
     {
@@ -14,27 +15,25 @@ public class BreatheExercise : Exercise
         
     }
 
+    //Method to initiate and terminate the breathe exercise
     public string StartBreathExercise(int intendedDuration)
     {
         DateTime currentTime = DateTime.Now;
         
         DateTime futureTime = currentTime.AddSeconds(intendedDuration);
         pauseExercise();
-        
+        Console.WriteLine("Hit enter ");
+            
         int countB = 0;
         while (DateTime.Now < futureTime)
         {
             DisplayAnimation();
-            Console.WriteLine();
             Console.WriteLine("Breathe in..");
-            Console.WriteLine();
-            Thread.Sleep(1000);       
+            Console.WriteLine();      
 
             DisplayAnimation();
-            Console.WriteLine();
             Console.WriteLine("Now breathe out.." );
             Console.WriteLine();
-            Thread.Sleep(1000);
 
             countB = countB + 2;
 

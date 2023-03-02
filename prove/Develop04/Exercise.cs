@@ -94,16 +94,21 @@ public class Exercise
     }
 
     //Count down timer method
-    public decimal CountDownTimer()
+    public void CountDownTimer()
     {
         
-        for (int i = 10; i < 0; i--)
+        for (int i = 10; i < 1; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b\b \b\b");
+            if (i > 9)
+            {
+                Console.Write("\b\b \b\b");
+                
+            }Console.Write("\b \b");
+            
         }
-        return Console.Read();
+        
     }
     //Display animation method
     public void DisplayAnimation()

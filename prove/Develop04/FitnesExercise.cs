@@ -24,12 +24,14 @@ public class FitnesExercise : Exercise
         
         pauseExercise();
         DisplayAnimation();
+        
         Console.WriteLine("Stand up, stretch, seat and hit the enter key");
         Console.WriteLine("get ready...");
-        
+            
         int countF = 0;
         while (DateTime.Now < futureTime)
-        {  
+        {
+            
             if (Console.ReadKey(true).Key == ConsoleKey.Enter)
             {
                 DisplayAnimation();

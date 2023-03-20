@@ -44,8 +44,6 @@ public class EternalGoals : Goals
         EternalGoals eternalGoals = new EternalGoals(_goalName, _goalDescription, goalPoints, _completedDate); 
         eternalGoals.SetGoalPoints(goalPoints);
         GoalsMenu._goalsList.Add(eternalGoals);
-
-        //the end
     }
     
 }

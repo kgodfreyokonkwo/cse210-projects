@@ -104,8 +104,6 @@ public class GoalsMenu
             Console.WriteLine($"Congratulations! You just earned {newPoints}.");
             currentScore += newPoints;
         }
-
-        //the end
     }  
 	
 }

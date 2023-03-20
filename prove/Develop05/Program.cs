@@ -85,7 +85,6 @@ public partial class Program
             checkListGoals.SetName(goalNameResponse);
             checkListGoals.SetDescription(goalDescriptResponse);
             checkListGoals.CreateGoal();
-        } 
-        // the end
+        }
     }
 }

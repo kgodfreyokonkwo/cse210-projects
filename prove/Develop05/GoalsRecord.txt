@@ -1,4 +1,2 @@
-200
-Simple Goal-Service goal-Serve a stranger in my neighbourhood-200-True
-Eternal Goal-Scriptures studying-Studying the scripture for 30mins everyday-100-
-Checklist Goal-Temple visit-Visit the temple 10 times in this year-400-False-5000-10-0
+0
+Simple Goal-Institute of Religion-Enrol into institute of religion-400-False

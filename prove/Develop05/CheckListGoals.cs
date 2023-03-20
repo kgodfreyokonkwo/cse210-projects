@@ -77,6 +77,8 @@ public class CheckListGoals : Goals
         CheckListGoals checkListGoals = new CheckListGoals(_goalName, _goalDescription, goalPoints, goalRepeatNo, bonus, _completedDate);
         checkListGoals.SetGoalPoints(goalPoints);
         GoalsMenu._goalsList.Add(checkListGoals); 
+
+        //the end
     }
 
 }

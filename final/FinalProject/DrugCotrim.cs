@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 public class DrugCotrim : Medicine
 {
     //declear and instantiate the perculiar variables

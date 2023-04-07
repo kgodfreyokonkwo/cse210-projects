@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 class Program
 {    
     static void Main(string[] args)
@@ -8,7 +8,7 @@ class Program
         
 
         //While the user continue to use the APP,  
-        while(userSelection != 5) 
+        while(userSelection != 3) 
         {
             Console.WriteLine();
             Console.WriteLine("Welcome to Medicine Forecasting Application"); 

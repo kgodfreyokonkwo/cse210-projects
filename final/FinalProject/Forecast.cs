@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 public class Forecast : Medicine
 {
     //Declear a new list to hold the forecast data

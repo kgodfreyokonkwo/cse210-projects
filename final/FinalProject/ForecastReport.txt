@@ -1,0 +1,9 @@
+This is your forecast report
+Hospital Name: St. Meridian Hospital
+Hospital Address: Block 1, Rumuokoro Port Harcourt, Rivers Nigeria
+Hospital Geocordinate: 7.033202/6.990933
+Name of Forecasting Officer: Pharmacist Kingsley Godfrey
+Isoniazid (INH) : for 2,300patients : requires 690.00cartons : for 12months
+Tenofovir3 (TLD) : for 4,502patients : requires 375.17cartons : for 12months
+Nevirapine (NVP) : for 12,000patients : requires 5400.00cartons : for 12months
+Cotrimoxazole (Cotrim) : for 2,333patients : requires 55.99cartons : for 12months

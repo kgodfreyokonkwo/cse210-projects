@@ -1,23 +1,30 @@
 using System;
 using System.Collections.Generic;
-public class SiteDetails
+public class HospitalDetails
 {
+    //Define variables and instantiate to default
+    public List<string> _SiteDetails = new List<string>();
     private string _clinicName = "";
     private string _officerName = "";
     private string _clinicAddress = "";
     private string _geoCoordinate = "";
 
-    public SiteDetails(int forecastDuration, string drugName, int treatmentDays, 
-    int numberPatients, int drugDailyUnit, string patientWeightRange, int cartonSize, string clinicName, string officerName, string clinicAddress, string geoCordinate)
+    //Define constructor
+    public HospitalDetails (string clinicName, string officerName, string clinicAddress, string geoCoordinate)
     {
         _clinicName = clinicName;
         _officerName = officerName;
         _clinicAddress = clinicAddress;
-        _geoCoordinate = geoCordinate;
+        _geoCoordinate = geoCoordinate;
     }
 
+    public HospitalDetails ()
+    {
 
+        
+    }
 
+    //Outline the getters and setters
     public string GetClinicName()
     {
         return _clinicName;
@@ -46,20 +53,19 @@ public class SiteDetails
     {
         return _geoCoordinate;
     }
-    public void SetGeoCordinate(string geoCordinate)
+    public void SetGeoCordinate(string geoCoordinate)
     {
-        _geoCoordinate = geoCordinate;
+        _geoCoordinate = geoCoordinate;
+    }
+
+    //A method to display hospital details
+    public string DisplayDetails()
+    {
+        return $"Hospital Name: {_clinicName}\nHospital Address: {_clinicAddress}\nHospital Geocordinate: {_geoCoordinate}\nName of Forecasting Officer: {_officerName}";
+
     }
 
 
-    public void HospitalDetails()
-    {
-        decimal totalNo = 0;
-        Console.Write($"Hospital Name: {_clinicName}");
-        Console.Write($"Hospital Address: {_clinicAddress}");
-        Console.Write($"Hospital Geocordinate: {_geoCoordinate}");
-        Console.Write($"Total Number of Patients forecasted for: {totalNo}");
-    }
 
 
 
@@ -67,5 +73,6 @@ public class SiteDetails
 
 
 
-	
+
+
 }

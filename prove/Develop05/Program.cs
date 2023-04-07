@@ -73,7 +73,7 @@ public partial class Program
             simpleGoals.CreateGoal();
         }
         if(goalChoice == "2")
-{
+        {
             EternalGoals eternalGoals = new EternalGoals();
             eternalGoals.SetName(goalNameResponse);
             eternalGoals.SetDescription(goalDescriptResponse);

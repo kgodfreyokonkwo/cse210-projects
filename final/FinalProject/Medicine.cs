@@ -1,37 +1,30 @@
 using System.Collections.Generic;
 public abstract class Medicine 
-{
-   
-    private int _forecastDuration = 0;
+{  
+    //Declear variables
     private string _drugName = "";
-    private int _treatmentDays = 0;
-    private int _numberPatients = 0;
-    private int _drugDailyUnit = 0;
-    private string _patientWeightRange = "";
-    private int _cartonSize = 0;
-    
+    private double _treatmentDays;
+    private double _numberPatients;
+    private double _drugUnit;
+    private double _forecastDuration;
 
-    public Medicine (int forecastDuration, string drugName, int treatmentDays, 
-    int numberPatients, int drugDailyUnit, string patientWeightRange, int cartonSize)
+    //Define the constructors
+    public Medicine (string drugName, double treatmentDays, 
+    double numberPatients, double drugUnit, double forecastDuration)
     {
-        _forecastDuration = forecastDuration;
         _drugName = drugName;
         _treatmentDays = treatmentDays;
         _numberPatients = numberPatients;
-        _drugDailyUnit = drugDailyUnit;
-        _patientWeightRange = patientWeightRange;
-        _cartonSize = cartonSize;
-    }
-
-
-    public int GetForecastDuration()
-    {
-        return _forecastDuration;
-    }
-    public void SetForecastDuration(int forecastDuration)
-    {
+        _drugUnit = drugUnit;
         _forecastDuration = forecastDuration;
     }
+
+    public Medicine ()
+    {
+
+    }
+
+    //define the setters and getters
     public string GetDrugName()
     {
         return _drugName;
@@ -40,15 +33,15 @@ public abstract class Medicine
     {
         _drugName = drugName;
     }
-    public int GetTreatementDays()
+    public double GetTreatmentDays()
     {
         return _treatmentDays;
     }
-    public void SetTreatmentDays(int treatmentDays)
+    public void SetTreatmentDays(double treatmentDays)
     {
         _treatmentDays = treatmentDays;
     }
-    public int GetNumberPatients()
+    public double GetNumberPatients()
     {
         return _numberPatients;
     }
@@ -56,67 +49,52 @@ public abstract class Medicine
     {
         _numberPatients = numberPatients;
     }
-    public int GetDrugDailyUnint()
+    public double GetDrugUnit()
     {
-        return _drugDailyUnit;
+        return _drugUnit;
     }
-    public void SetDrugDailyUnit(int drugDailyUnit)
+    public void SetDrugUnit(int drugUnit)
     {
-        _drugDailyUnit = drugDailyUnit;
+        _drugUnit = drugUnit;
     }
-    public string GetPatientWeightRange()
+    public double GetForecastDuration()
     {
-        return _patientWeightRange;
+        return _forecastDuration;
     }
-    public void SetPatientWeightRange(string patientWeightRange)
+    public void SetForecastDuration(double forecastDuration)
     {
-        _patientWeightRange = patientWeightRange;
-    }
-    public int GetCartonSize()
-    {
-        return _cartonSize;
-    }
-    public void SetCartonSize(int cartonSize)
-    {
-        _cartonSize = cartonSize;
+        _forecastDuration = forecastDuration;
     }
 
 
 
 
+    //An abstract method to calculate the rate of consumption of medicines
+    public abstract double ConsumptionRate();
 
-    public abstract decimal ConsumptionRate();
-
-    public decimal PackMonthEstimation()
+    
+    //A method to calculate the number of packs of medicine that will be required in a month
+    public double PackMonthEstimation()
     {
-        Console.Write("Enter the duration of treatment in days: ");
-        int _treatmentDays = int.Parse(Console.ReadLine());
-
         // Calculate the total number of packs needed
-        double packsPerMonth = (double)(ConsumptionRate() * _treatmentDays);
+        double packsPerMonth = ConsumptionRate() * 30;
 
-        return (decimal)packsPerMonth;        
+        return packsPerMonth;        
 
     }
 
-    public decimal CartonEstimation()
+    //An abstract method to estimate the quantity of drug required by 1 patient in carton
+    public abstract double CartonEstimation();
+
+
+    //A method to convert drug quantities to carton
+    public double CartonsRequired()
     {
-        double packsForForecastDuration = (double)(PackMonthEstimation() * _forecastDuration);
+        double cartonsRequired = CartonEstimation() * (double)_numberPatients;
 
-        double cartonNo = packsForForecastDuration / _cartonSize;
-
-        return (decimal)cartonNo;
-
-    }
-  
-    public decimal TotalNoPatient()
-    {
-        return -1;
+        return cartonsRequired;
     }
 
-
-    public string forecastOutput()
-    {
-        return $"A total of {CartonEstimation} cartons of {GetDrugName} will be required for {GetPatientWeightRange} for the period of {GetForecastDuration} months ";
-    }
+    //An abstract method to diplay forecast output
+    public abstract string forecastOutput();
 }

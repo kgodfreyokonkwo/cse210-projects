@@ -1,25 +1,49 @@
 public class DrugCotrim : Medicine
 {
-    private float _tabletsPerPack = 1000;
+    //declear and instantiate the perculiar variables
+    private double _capletsPerPack = 1000;
+    private double _cartonSize = 30;
 
-    public DrugCotrim (int forecastDuration, string drugName, int treatmentDays, 
-    int numberPatients, int drugDailyUnit, string patientWeightRange, int cartonSize) :
-    base(forecastDuration, drugName, treatmentDays, numberPatients, drugDailyUnit, patientWeightRange, cartonSize)
+    //define the constructor
+    public DrugCotrim ()
+    {
+
+    }
+    public DrugCotrim (string drugName, double treatmentDays, double numberPatients, double drugUnit, double forecastDuration) :
+    base(drugName, treatmentDays, numberPatients, drugUnit, forecastDuration)
     {
 
     }
 
-    public override decimal ConsumptionRate()
-    {
-        Console.Write("Enter the number of tablets of Cotrim taken in a day: ");
-        int _drugDailyUnit = int.Parse(Console.ReadLine());
 
+    //An override method to calculate the rate of consumption of medicines
+    public override double ConsumptionRate()
+    {
+        double dailyUnit = GetDrugUnit() / GetTreatmentDays();
         // Calculate the number of packs per day
-        double packsPerDay = (double)_drugDailyUnit / _tabletsPerPack;
+        double packsPerDay = dailyUnit / _capletsPerPack;
 
         // Display the result to the user
 
-        return (decimal)packsPerDay;
+        return packsPerDay;
+
+    }
+    //An override method to estimate the quantity of drug required by 1 patient in carton
+    public override double CartonEstimation()
+    {
+        Forecast forecast = new Forecast();
+        double packsForForecastDuration = PackMonthEstimation() * GetForecastDuration();
+    
+        double cartonNo = packsForForecastDuration / _cartonSize;
+
+        return cartonNo;
+
+    }
+    //An override method to diplay forecast output
+    public override string forecastOutput()
+    {
+        Forecast forecast = new Forecast();
+        return $"{GetDrugName()} : for {GetNumberPatients():N0}patients : requires {CartonsRequired().ToString("F2")}cartons : for {GetForecastDuration()}months";
     }
 	
 }
